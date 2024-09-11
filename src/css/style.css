@@ -1,0 +1,338 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+}
+
+/* Cores principais */
+:root {
+    --primary-color: #1C222C; /* Cor de fundo e principal */
+    --secondary-color: #D2A683; /* Cor secundária */
+    --text-color: #ffffff; /* Branco */
+    --cta-color: #D2A683; /* Cor secundária */
+    --hover-color: #ffdab3; /*Cor secundária com menor tonalidade*/
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 20px;
+    color: var(--text-color);
+    position: relative;
+    z-index: 1000;
+}
+
+header .logo a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 24px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+nav ul.menu {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Menu Responsivo (Sanduíche) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px 20px;
+    transition: color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    color: var(--cta-color);
+}
+
+/* Estilo do Carrossel */
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.carousel-item {
+    position: relative;
+    width: 100%;
+    max-height: 400px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--text-color);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--cta-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.cta-button:hover {
+    background-color: var(--hover-color);
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.featured-articles {
+    margin-bottom: 40px;
+}
+
+.featured-articles h2 {
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.articles {
+    display: flex;
+    justify-content: space-between;
+}
+
+.articles article {
+    background-color: var(--primary-color);
+    padding: 15px;
+    width: 30%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid var(--secondary-color);
+}
+
+.articles img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.articles h3 {
+    color: var(--secondary-color);
+}
+
+.articles p {
+    color: var(--text-color);
+}
+
+.content h2 {
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.posts article {
+    background-color: var(--primary-color);
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid var(--secondary-color);
+}
+
+.posts h3 {
+    color: var(--secondary-color);
+}
+
+.posts p {
+    color: var(--text-color);
+}
+
+/* Carrossel de Membros da Equipe */
+.team-carousel {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.team-carousel-container {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.team-member {
+    min-width: 200px;
+    margin-right: 20px;
+    background-color: var(--primary-color);
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-member h3 {
+    color: var(--text-color);
+}
+
+.team-member p {
+    color: var(--secondary-color);
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 10;
+    transform: translateY(-50%);
+}
+
+.carousel-button.left {
+    left: 10px;
+}
+
+.carousel-button.right {
+    right: 10px;
+}
+
+/* Estilos para Menu Sanduíche */
+@media screen and (max-width: 768px) {
+    nav ul.menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul.menu.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+    .team-member {
+        min-width: 150px; /* Ajusta o tamanho dos membros para telas menores */
+    }
+}
+
+/* Estilo do Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content p {
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: var(--text-color);
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+}
+
+/* Ícone flutuante do WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366; /* Cor do WhatsApp */
+    color: #fff;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 24px;
+    z-index: 1000; /* Garante que o ícone fique acima de outros elementos */
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E; /* Cor de fundo ao passar o mouse */
+}
+
+.whatsapp-float i {
+    margin: 0;
+}
